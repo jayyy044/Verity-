@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Sagard Intelligence Design Tokens */
+  --bg: #0a0b0d;
+  --surface: #13151a;
+  --surface2: #1a1d25;
+  --surface3: #0f1015;
+  --border: #1e2128;
+  --border2: #2a2e38;
+  --text: #e8e6e0;
+  --text2: #8a8d96;
+  --text3: #555a66;
+  --text4: #444a56;
+
+  /* Accent Colors */
+  --gold: #f59e0b;
+  --gold-bg: #1a1200;
+  --gold-border: #3a2800;
+  --red: #e05252;
+  --blue: #4a90e2;
+  --green: #3db87a;
+
+  /* Semantic tokens for compatibility */
+  --background: #0a0b0d;
+  --foreground: #e8e6e0;
+  --card: #13151a;
+  --card-foreground: #e8e6e0;
+  --popover: #13151a;
+  --popover-foreground: #e8e6e0;
+  --primary: #f59e0b;
+  --primary-foreground: #000000;
+  --secondary: #1a1d25;
+  --secondary-foreground: #e8e6e0;
+  --muted: #1a1d25;
+  --muted-foreground: #8a8d96;
+  --accent: #1a1d25;
+  --accent-foreground: #e8e6e0;
+  --destructive: #e05252;
+  --destructive-foreground: #e8e6e0;
+  --input: #2a2e38;
+  --ring: #f59e0b;
+  --radius: 0px;
+}
+
+@theme inline {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)];
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbar for brief panel */
+.brief-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+.brief-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border2);
+}
+.brief-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
