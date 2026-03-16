@@ -16,7 +16,7 @@ export default function Topbar({
   return (
     <div className="flex items-center justify-between py-[11px] px-6 border-b border-[var(--border)] bg-[var(--bg)]">
       <div className="flex items-center gap-4">
-        <Logo size="small" />
+        <Logo/>
         <div className="w-px h-[18px] bg-[var(--border)]" />
         <div className="text-[11px] text-[var(--text)] tracking-[0.04em] font-mono">
           {companyName}

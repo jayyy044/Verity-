@@ -1,4 +1,5 @@
 import { IBM_Plex_Mono, Fraunces, DM_Sans } from "next/font/google";
+import ToastProvider from "@/components/shared/ToastProvider";
 import "./globals.css";
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -37,6 +38,7 @@ export default function RootLayout({
         className={`${ibmPlexMono.variable} ${fraunces.variable} ${dmSans.variable} antialiased`}
       >
         {children}
+        <ToastProvider />
       </body>
     </html>
   );

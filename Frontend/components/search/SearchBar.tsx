@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 interface SearchBarProps {
   setLoading: (value: boolean) => void;
@@ -21,7 +22,7 @@ export default function SearchBar({setLoading, setCompanyName}: SearchBarProps) 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+    toast.error("Search failed");
     const trimmed = query.trim();
     if (!trimmed) return;
   
@@ -43,6 +44,7 @@ export default function SearchBar({setLoading, setCompanyName}: SearchBarProps) 
       if (!res.ok) {
         // console.error("Search failed", await res.text());
         setTimeout( async() => {
+          toast.success("Search failed — please try again.");
           setLoading(false);
           console.error("Search failed", await res.text());
 

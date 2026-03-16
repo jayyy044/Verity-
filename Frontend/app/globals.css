@@ -99,3 +99,35 @@
 .brief-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.Toastify__toast {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border2) !important;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  min-height: unset;
+  padding: 8px 12px;
+}
+
+.Toastify__toast--success {
+  border-color: var(--gold-border);
+}
+
+.Toastify__toast--error {
+  border-color: var(--red-border);
+}
+
+.Toastify__close-button {
+  color: var(--text2);
+  opacity: 0.7;
+  margin-top: 0.5vh;
+}
+
+.Toastify__close-button:hover {
+  color: var(--gold);
+  opacity: 1;
+}
