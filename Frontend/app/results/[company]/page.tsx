@@ -61,14 +61,14 @@ type ResultsPageParams = {
   company: string;
 };
 
-export default async function ResultsPage({
-  params,
-}: {
-  params?: ResultsPageParams;
-}) {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+type ResultsPageProps = {
+  params: Promise<ResultsPageParams>;
+};
 
-  const rawCompany = params?.company || "company";
+export default async function ResultsPage({ params }: ResultsPageProps) {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+  const { company } = await params; // ✅ unwrap the Promise
+  const rawCompany = company || "company";
   const companyName = rawCompany
     .toString()
     .replace(/-/g, " ")

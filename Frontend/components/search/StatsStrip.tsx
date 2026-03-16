@@ -7,7 +7,7 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <div className="flex gap-10 mt-[52px] pt-7 border-t border-[#1A1D22] w-[70vw] justify-center">
+    <div className="flex gap-10 mt-[40px] pt-7 border-t border-[#1A1D22] w-[70vw] justify-center">
       {stats.map((stat, index) => (
         <div key={index} className="text-center">
           <div className="font-serif text-[24px] font-light text-[var(--text)]">
