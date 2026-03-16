@@ -35,7 +35,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="w-full max-w-[580px]">
+    <div className="w-full max-w-[50vw]">
       <form onSubmit={handleSubmit}>
         <div className="flex border border-[var(--border2)] bg-[var(--surface)] focus-within:border-[var(--gold)]">
           <input
@@ -55,14 +55,14 @@ export default function SearchBar() {
       </form>
 
       <div className="flex items-center gap-2 flex-wrap justify-center mt-4">
-        <span className="text-[10px] text-[var(--text4)] tracking-[0.06em] font-mono">
+        <span className="text-[15px] text-[var(--text4)] tracking-[0.06em] font-mono font-bold">
           TRY:
         </span>
         {sampleCompanies.map((company) => (
           <button
             key={company}
             onClick={() => handlePillClick(company)}
-            className="border border-[var(--border)] bg-transparent text-[var(--text3)] font-mono text-[10px] py-1 px-3 cursor-pointer tracking-[0.04em] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors"
+            className="border border-[var(--border)] bg-transparent text-[var(--text3)] font-mono text-[15px] py-1 px-3 cursor-pointer tracking-[-0.5px] hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors"
           >
             {company}
           </button>
