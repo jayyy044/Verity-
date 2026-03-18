@@ -47,33 +47,28 @@ import ConfidenceFooter from "./brief/ConfidenceFooter";
 import { IntelligenceReport } from "@/types/report";
 
 export default function BriefPanel({ data }: { data: IntelligenceReport }) {
-  const stageTag = (data.revenue_stage ?? data.funding.ownership_type ?? "—").toUpperCase();
-  const sectorTag = data.company.sector.toUpperCase();
-  const locationTag = data.company.hq.toUpperCase();
-
+  // const stageTag = (data.revenue_stage ?? data.funding.ownership_type ?? "—").toUpperCase();
+  // const sectorTag = data.company.sector.toUpperCase();
+  // const locationTag = data.company.hq.toUpperCase();
+  console.log('BreifPanel', data)
   return (
     <div className="flex flex-col overflow-y-auto bg-[var(--surface)] brief-scrollbar h-full">
       {/* Header */}
-      <div className="py-3.5 px-[18px] border-b border-[var(--border)] bg-[var(--surface)] sticky top-0 z-10">
-        <div className="font-serif text-[19px] font-light text-[var(--text)] mb-0.5">
+      <div className="py-3.5 px-[18px] border-b border-[var(--border)] bg-[var(--surface)] sticky top-0 z-10 font-serif text-[25px] font-light text-[var(--text)] mb-0.5">
           {data.company.name}
-        </div>
-        <div className="text-[10px] text-[var(--text3)] tracking-[0.04em] font-mono">
-          {stageTag} &middot; {sectorTag} &middot; {locationTag}
-        </div>
       </div>
 
       {/* Sections — each receives the full report */}
-      {/* <CompanyProfile data={data} />
-      <FitScore data={data} />
+      <CompanyProfile data={data.company} />
+       {/*<FitScore data={data} />*/}
       <MarketSection data={data} />
-      <NewsSection data={data} /> */}
+      {/* <NewsSection data={data} />  */}
 
       {/* Footer */}
-      <ConfidenceFooter
+      {/* <ConfidenceFooter
         level={data.confidence.toLowerCase() as "high" | "medium" | "low"}
         notes={data.confidence_note}
-      />
+      /> */}
     </div>
   );
 }

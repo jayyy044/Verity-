@@ -136,7 +136,6 @@ export default function ResultsPage() {
     }
   }, [slug]);
 
-  console.log(report, "bello")
 
   // ── Error ────────────────────────────────────────────────────
   if (error) {
@@ -180,7 +179,7 @@ export default function ResultsPage() {
         <div className="border-r border-[var(--border)]">
           <EcosystemMap nodes={report.ecosystem.nodes} />
         </div>
-        {/* <BriefPanel data={report} /> */}
+        <BriefPanel data={report} />
       </div>
     </div>
   );

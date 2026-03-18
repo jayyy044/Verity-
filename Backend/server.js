@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
-const { callA, callB, fillGaps } = require('./research/exaSearches');
+const { runAllSearches, fillGaps } = require('./research/exaSearches');
 const { detectGaps }             = require('./research/gapDetector');
 const { synthesize }             = require('./research/synthesizer');
 
@@ -106,231 +106,231 @@ app.get('/', (req, res) => {
 //   MISS:   run full pipeline from scratch
 // ─────────────────────────────────────────────────────────────
 
-app.post('/research/stream', async (req, res) => {
-  const { company, descriptor } = req.body;
+// app.post('/research/stream', async (req, res) => {
+//   const { company, descriptor } = req.body;
 
-  if (!company || company.trim() === '') {
-    return res.status(400).json({ error: 'Company name is required' });
-  }
+//   if (!company || company.trim() === '') {
+//     return res.status(400).json({ error: 'Company name is required' });
+//   }
 
-  res.setHeader('Content-Type', 'text/event-stream');
-  res.setHeader('Cache-Control', 'no-cache');
-  res.setHeader('Connection', 'keep-alive');
-  res.flushHeaders();
+//   res.setHeader('Content-Type', 'text/event-stream');
+//   res.setHeader('Cache-Control', 'no-cache');
+//   res.setHeader('Connection', 'keep-alive');
+//   res.flushHeaders();
 
-  try {
-    send(res, { step: 0 }); // Initializing research pipeline
+//   try {
+//     send(res, { step: 0 }); // Initializing research pipeline
 
-    // ── TIER 1: Synthesized output cache ──────────────────────
-    // Full final report already exists — skip everything
-    const cachedSynthesized = readCache(SYNTHESIZED_CACHE, company, descriptor);
+//     // ── TIER 1: Synthesized output cache ──────────────────────
+//     // Full final report already exists — skip everything
+//     const cachedSynthesized = readCache(SYNTHESIZED_CACHE, company, descriptor);
 
-    if (cachedSynthesized) {
-      console.log('[Stream] Synthesized cache hit — returning final report immediately');
-      for (let step = 1; step <= 8; step++) {
-        send(res, { step });
-        await sleep(80);
-      }
-      send(res, {
-        step: 'done',
-        data: cachedSynthesized,
-        served_from_cache: 'synthesizedOutput',
-      });
-      res.end();
-      return;
-    }
+//     if (cachedSynthesized) {
+//       console.log('[Stream] Synthesized cache hit — returning final report immediately');
+//       for (let step = 1; step <= 8; step++) {
+//         send(res, { step });
+//         await sleep(80);
+//       }
+//       send(res, {
+//         step: 'done',
+//         data: cachedSynthesized,
+//         served_from_cache: 'synthesizedOutput',
+//       });
+//       res.end();
+//       return;
+//     }
 
-    // ── TIER 2: Results cache ──────────────────────────────────
-    // Raw Exa + gap data exists — skip straight to synthesizer
-    const cachedResults = readCache(RESULT_CACHE_DIR, company, descriptor);
+//     // ── TIER 2: Results cache ──────────────────────────────────
+//     // Raw Exa + gap data exists — skip straight to synthesizer
+//     const cachedResults = readCache(RESULT_CACHE_DIR, company, descriptor);
 
-    if (cachedResults) {
-      console.log('[Stream] Results cache hit — skipping Exa + gap detection, running synthesizer');
-      for (let step = 1; step <= 7; step++) {
-        send(res, { step });
-        await sleep(80);
-      }
+//     if (cachedResults) {
+//       console.log('[Stream] Results cache hit — skipping Exa + gap detection, running synthesizer');
+//       for (let step = 1; step <= 7; step++) {
+//         send(res, { step });
+//         await sleep(80);
+//       }
 
-      send(res, { step: 8 }); // Synthesizing intelligence brief
-      const intelligenceReport = await synthesize(company, cachedResults);
+//       send(res, { step: 8 }); // Synthesizing intelligence brief
+//       const intelligenceReport = await synthesize(company, cachedResults);
 
-      const finalOutput = {
-        ...cachedResults,
-        status: 'complete',
-        intelligence_report: intelligenceReport,
-      };
+//       const finalOutput = {
+//         ...cachedResults,
+//         status: 'complete',
+//         intelligence_report: intelligenceReport,
+//       };
 
-      writeCache(SYNTHESIZED_CACHE, company, descriptor, finalOutput);
+//       writeCache(SYNTHESIZED_CACHE, company, descriptor, finalOutput);
 
-      send(res, {
-        step: 'done',
-        data: finalOutput,
-        served_from_cache: 'results',
-      });
-      res.end();
-      return;
-    }
+//       send(res, {
+//         step: 'done',
+//         data: finalOutput,
+//         served_from_cache: 'results',
+//       });
+//       res.end();
+//       return;
+//     }
 
-    // ── TIER 3: Exa cache ──────────────────────────────────────
-    // Raw Exa results exist — skip Exa calls, run gap detection + synthesizer
-    let commercialData, signalsData;
-    const cachedExa = readCache(EXA_CACHE_DIR, company, descriptor);
+//     // ── TIER 3: Exa cache ──────────────────────────────────────
+//     // Raw Exa results exist — skip Exa calls, run gap detection + synthesizer
+//     let commercialData, signalsData;
+//     const cachedExa = readCache(EXA_CACHE_DIR, company, descriptor);
 
-    if (cachedExa) {
-      console.log('[Stream] Exa cache hit — skipping Exa calls, running gap detection + synthesizer');
-      commercialData = cachedExa.commercialData;
-      signalsData    = cachedExa.signalsData;
+//     if (cachedExa) {
+//       console.log('[Stream] Exa cache hit — skipping Exa calls, running gap detection + synthesizer');
+//       commercialData = cachedExa.commercialData;
+//       signalsData    = cachedExa.signalsData;
 
-      for (let step = 1; step <= 4; step++) {
-        send(res, { step });
-        await sleep(80);
-      }
+//       for (let step = 1; step <= 4; step++) {
+//         send(res, { step });
+//         await sleep(80);
+//       }
 
-    } else {
-      // ── FULL MISS: Run Exa from scratch ─────────────────────
-      console.log('[Stream] No cache — running full pipeline');
+//     } else {
+//       // ── FULL MISS: Run Exa from scratch ─────────────────────
+//       console.log('[Stream] No cache — running full pipeline');
 
-      send(res, { step: 1 }); // Searching company profile & business model
-      const callAPromise = callA(company, descriptor);
+//       send(res, { step: 1 }); // Searching company profile & business model
+//       const callAPromise = callA(company, descriptor);
 
-      send(res, { step: 2 }); // Mapping competitive landscape
-      const callBPromise = callB(company, descriptor);
+//       send(res, { step: 2 }); // Mapping competitive landscape
+//       const callBPromise = callB(company, descriptor);
 
-      [commercialData, signalsData] = await Promise.all([callAPromise, callBPromise]);
+//       [commercialData, signalsData] = await Promise.all([callAPromise, callBPromise]);
 
-      send(res, { step: 3 }); // Identifying ecosystem relationships
-      send(res, { step: 4 }); // Scanning news & sentiment signals
+//       send(res, { step: 3 }); // Identifying ecosystem relationships
+//       send(res, { step: 4 }); // Scanning news & sentiment signals
 
-      writeCache(EXA_CACHE_DIR, company, descriptor, { commercialData, signalsData });
-    }
+//       writeCache(EXA_CACHE_DIR, company, descriptor, { commercialData, signalsData });
+//     }
 
-    // ── Gap detection (always runs if no results cache) ───────
-    send(res, { step: 5 }); // Checking for research gaps
-    const gapResult = await detectGaps(company, commercialData, signalsData);
+//     // ── Gap detection (always runs if no results cache) ───────
+//     send(res, { step: 5 }); // Checking for research gaps
+//     const gapResult = await detectGaps(company, commercialData, signalsData);
 
-    // ── Gap fill (conditional) ────────────────────────────────
-    let gapData = [];
+//     // ── Gap fill (conditional) ────────────────────────────────
+//     let gapData = [];
 
-    if (gapResult.gaps.length > 0) {
-      send(res, { step: 6 }); // Filling research gaps
-      console.log(`[Stream] Filling ${gapResult.gaps.length} gap(s)...`);
-      gapData = await fillGaps(gapResult.gaps);
-    } else {
-      console.log('[Stream] No gaps — skipping gap fill');
-    }
+//     if (gapResult.gaps.length > 0) {
+//       send(res, { step: 6 }); // Filling research gaps
+//       console.log(`[Stream] Filling ${gapResult.gaps.length} gap(s)...`);
+//       gapData = await fillGaps(gapResult.gaps);
+//     } else {
+//       console.log('[Stream] No gaps — skipping gap fill');
+//     }
 
-    send(res, { step: 7 }); // Research complete, preparing synthesis
+//     send(res, { step: 7 }); // Research complete, preparing synthesis
 
-    // ── Assemble pipeline bundle ──────────────────────────────
-    const pipelineOutput = {
-      status: 'exa_complete',
-      company,
-      descriptor: descriptor || null,
-      gap_detection: {
-        gaps_found: gapResult.gaps.length,
-        gaps:       gapResult.gaps,
-        confidence: gapResult.confidence,
-        notes:      gapResult.notes,
-      },
-      results: {
-        callA: {
-          companyProfile: {
-            count:   commercialData.companyProfile.results.length,
-            results: commercialData.companyProfile.results.map(r => ({
-              title:   r.title,
-              url:     r.url,
-              preview: r.text,
-            })),
-          },
-          competitors: {
-            count:   commercialData.competitors.results.length,
-            results: commercialData.competitors.results.map(r => ({
-              title:   r.title,
-              url:     r.url,
-              preview: r.text,
-            })),
-          },
-          funding: {
-            count:   commercialData.funding.results.length,
-            results: commercialData.funding.results.map(r => ({
-              title:   r.title,
-              url:     r.url,
-              preview: r.text, // more text — highest hallucination risk
-            })),
-          },
-          ecosystem: {
-            count:   commercialData.ecosystem?.results.length || 0,
-            results: (commercialData.ecosystem?.results || []).map(r => ({
-              title:   r.title,
-              url:     r.url,
-              preview: r.text,
-            })),
-          },
-        },
-        callB: {
-          news: {
-            count:   signalsData.news.results.length,
-            results: signalsData.news.results.map(r => ({
-              title:      r.title,
-              url:        r.url,
-              published:  r.publishedDate?.slice(0, 20),
-              highlights: r.highlights,
-              preview:    r.text,
-            })),
-          },
-          founders: {
-            count:   signalsData.founders.results.length,
-            results: signalsData.founders.results.map(r => ({
-              title:   r.title,
-              url:     r.url,
-              preview: r.text,
-            })),
-          },
-        },
-        gapFill: {
-          count:   gapData.length,
-          results: gapData.map((r, i) => ({
-            query:   gapResult.gaps[i],
-            count:   r.results?.length || 0,
-            results: (r.results || []).map(x => ({
-              title:   x.title,
-              url:     x.url,
-              preview: x.text,
-            })),
-          })),
-        },
-      },
-    };
+//     // ── Assemble pipeline bundle ──────────────────────────────
+//     const pipelineOutput = {
+//       status: 'exa_complete',
+//       company,
+//       descriptor: descriptor || null,
+//       gap_detection: {
+//         gaps_found: gapResult.gaps.length,
+//         gaps:       gapResult.gaps,
+//         confidence: gapResult.confidence,
+//         notes:      gapResult.notes,
+//       },
+//       results: {
+//         callA: {
+//           companyProfile: {
+//             count:   commercialData.companyProfile.results.length,
+//             results: commercialData.companyProfile.results.map(r => ({
+//               title:   r.title,
+//               url:     r.url,
+//               preview: r.text,
+//             })),
+//           },
+//           competitors: {
+//             count:   commercialData.competitors.results.length,
+//             results: commercialData.competitors.results.map(r => ({
+//               title:   r.title,
+//               url:     r.url,
+//               preview: r.text,
+//             })),
+//           },
+//           funding: {
+//             count:   commercialData.funding.results.length,
+//             results: commercialData.funding.results.map(r => ({
+//               title:   r.title,
+//               url:     r.url,
+//               preview: r.text, // more text — highest hallucination risk
+//             })),
+//           },
+//           ecosystem: {
+//             count:   commercialData.ecosystem?.results.length || 0,
+//             results: (commercialData.ecosystem?.results || []).map(r => ({
+//               title:   r.title,
+//               url:     r.url,
+//               preview: r.text,
+//             })),
+//           },
+//         },
+//         callB: {
+//           news: {
+//             count:   signalsData.news.results.length,
+//             results: signalsData.news.results.map(r => ({
+//               title:      r.title,
+//               url:        r.url,
+//               published:  r.publishedDate?.slice(0, 20),
+//               highlights: r.highlights,
+//               preview:    r.text,
+//             })),
+//           },
+//           founders: {
+//             count:   signalsData.founders.results.length,
+//             results: signalsData.founders.results.map(r => ({
+//               title:   r.title,
+//               url:     r.url,
+//               preview: r.text,
+//             })),
+//           },
+//         },
+//         gapFill: {
+//           count:   gapData.length,
+//           results: gapData.map((r, i) => ({
+//             query:   gapResult.gaps[i],
+//             count:   r.results?.length || 0,
+//             results: (r.results || []).map(x => ({
+//               title:   x.title,
+//               url:     x.url,
+//               preview: x.text,
+//             })),
+//           })),
+//         },
+//       },
+//     };
 
-    // Save results cache before synthesizing
-    // This way if synthesis fails, the next request can resume from here
-    writeCache(RESULT_CACHE_DIR, company, descriptor, pipelineOutput);
-    send(res, { step: 8 });
-    // ── Synthesizer ───────────────────────────────────────────
-    const intelligenceReport = await synthesize(company, pipelineOutput);
+//     // Save results cache before synthesizing
+//     // This way if synthesis fails, the next request can resume from here
+//     writeCache(RESULT_CACHE_DIR, company, descriptor, pipelineOutput);
+//     send(res, { step: 8 });
+//     // ── Synthesizer ───────────────────────────────────────────
+//     const intelligenceReport = await synthesize(company, pipelineOutput);
 
-    const finalOutput = {
-      ...pipelineOutput,
-      status: 'complete',
-      intelligence_report: intelligenceReport,
-    };
+//     const finalOutput = {
+//       ...pipelineOutput,
+//       status: 'complete',
+//       intelligence_report: intelligenceReport,
+//     };
  
-    // Save to synthesized cache — this is what future requests will hit first
-    writeCache(SYNTHESIZED_CACHE, company, descriptor, finalOutput);
+//     // Save to synthesized cache — this is what future requests will hit first
+//     writeCache(SYNTHESIZED_CACHE, company, descriptor, finalOutput);
 
-    send(res, {
-      step: 'done',
-      data: finalOutput,
-      served_from_cache: false,
-    });
-    res.end();
+//     send(res, {
+//       step: 'done',
+//       data: finalOutput,
+//       served_from_cache: false,
+//     });
+//     res.end();
 
-  } catch (error) {
-    console.error('[Stream] Pipeline error:', error.message);
-    send(res, { step: 'error', message: error.message });
-    res.end();
-  }
-});
+//   } catch (error) {
+//     console.error('[Stream] Pipeline error:', error.message);
+//     send(res, { step: 'error', message: error.message });
+//     res.end();
+//   }
+// });
 
 // ─────────────────────────────────────────────────────────────
 // DELETE /cache — clear cache for a specific company
@@ -379,6 +379,60 @@ app.get('/cache', (req, res) => {
     results:           list(RESULT_CACHE_DIR),
     exa:               list(EXA_CACHE_DIR),
   });
+});
+
+// ─────────────────────────────────────────────────────────────
+// POST /research/test — test new Exa search pipeline
+// Body: { company, descriptor? }
+// ─────────────────────────────────────────────────────────────
+
+// ─────────────────────────────────────────────────────────────
+// POST /research/test — test new Exa search pipeline
+// Body: { company, descriptor? }
+// ─────────────────────────────────────────────────────────────
+
+app.post('/research/test', async (req, res) => {
+  const { company, descriptor } = req.body;
+
+  if (!company || company.trim() === '') {
+    return res.status(400).json({ error: 'Company name is required' });
+  }
+
+  try {
+    console.log(`[Test] Running new search pipeline for: ${company}`);
+
+    // Check Exa cache first — skip searches if already cached
+    const cachedExa = readCache(EXA_CACHE_DIR, company, descriptor);
+
+    let searchData;
+
+    if (cachedExa) {
+      console.log('[Test] Exa cache hit — returning cached results');
+      searchData = cachedExa;
+    } else {
+      searchData = await runAllSearches(company, descriptor);
+
+      // Write raw results to Exa cache
+      writeCache(EXA_CACHE_DIR, company, descriptor, {
+        identity:    { count: searchData.identity.results.length,    results: searchData.identity.results },
+        funding:     { count: searchData.funding.results.length,     results: searchData.funding.results },
+        competitors: { count: searchData.competitors.results.length, results: searchData.competitors.results },
+        team:        { count: searchData.team.results.length,        results: searchData.team.results },
+        news:        { count: searchData.news.results.length,        results: searchData.news.results },
+        ecosystem:   { count: searchData.ecosystem.results.length,   results: searchData.ecosystem.results },
+      });
+    }
+
+    res.json({
+      company,
+      descriptor: descriptor || null,
+      served_from_cache: !!cachedExa,
+    });
+
+  } catch (error) {
+    console.error('[Test] Error:', error.message);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 const PORT = process.env.PORT || 5000;
