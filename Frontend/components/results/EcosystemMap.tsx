@@ -1,5 +1,6 @@
 "use client";
 
+import { EcosystemNode } from "@/types/report";
 import { useMemo } from "react";
 
 // Approximate rendered character width at a given font size (monospace, roughly)
@@ -68,37 +69,16 @@ function minCircleDiameter(
 }
 
 interface EcosystemMapProps {
+  nodes: EcosystemNode[];
   companyName: string;
 }
 
-export default function EcosystemMap({ companyName }: EcosystemMapProps) {
-  const competitors = [
-    { name: "Questrade" },
-    { name: "RBC InvestEase" },
-    { name: "BMO SmartFolio" },
-    { name: "Moka Financial" },
-    { name: "CI Direct Investing" },
-    { name: "Questrade" },
-    { name: "RBC InvestEase" },
-    { name: "BMO SmartFolio" },
-    { name: "Moka Financial" },
-    { name: "CI Direct Investing" },
-    { name: "Moka Financial" },
-  ];
-
-  const ecosystem = [
-    { name: "Power Corporation of Canada" },
-    { name: "Broadridge" },
-    { name: "IGM Financial" },
-    { name: "Plaid Technologies" },
-    { name: "Stripe Inc" },
-    { name: "Questrade" },
-    { name: "RBC InvestEase" },
-    { name: "BMO SmartFolio" },
-    { name: "Moka Financial" },
-    { name: "CI Direct Investing" },
-    { name: "CI Direct Investing" },
-  ];
+export default function EcosystemMap({
+  nodes,
+  companyName,
+}: EcosystemMapProps) {
+  const competitors = nodes.filter((n) => n.type === "competitor");
+  const ecosystem = nodes.filter((n) => n.type === "ecosystem");
 
   const totalCompanies = competitors.length + ecosystem.length;
 
