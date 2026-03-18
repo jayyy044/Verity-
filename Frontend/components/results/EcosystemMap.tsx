@@ -47,9 +47,9 @@ function targetRadius(name: string): number {
 export default function EcosystemMap({ nodes }: { nodes: EcosystemNode[] }) {
   const competitors = nodes.filter((n) => n.type === "competitor").slice(0, 5);
   const ecosystem   = nodes.filter((n) => n.type === "ecosystem").slice(0, 5);
-  const targetNode  = nodes.find((n) => n.type === "target");
-  const targetName  = targetNode?.name ?? "";
-  const tR          = targetRadius(targetName);
+  // const targetNode  = nodes.find((n) => n.type === "target");
+  // const targetName  = targetNode?.name ?? "";
+  // const tR          = targetRadius(targetName);
 
   return (
     <div className="flex flex-col h-full">
@@ -116,7 +116,7 @@ export default function EcosystemMap({ nodes }: { nodes: EcosystemNode[] }) {
               <line
                 key={`cl-${i}`}
                 x1={LEFT_CX + r}       y1={cy}
-                x2={TARGET.cx - tR}    y2={TARGET.cy}
+                // x2={TARGET.cx - tR}    y2={TARGET.cy}
                 stroke="#2A2E38" strokeWidth="1" opacity="0.55"
               />
             );
@@ -130,7 +130,7 @@ export default function EcosystemMap({ nodes }: { nodes: EcosystemNode[] }) {
               <line
                 key={`el-${i}`}
                 x1={RIGHT_CX - r}      y1={cy}
-                x2={TARGET.cx + tR}    y2={TARGET.cy}
+                // x2={TARGET.cx + tR}    y2={TARGET.cy}
                 stroke="#2A2E38" strokeWidth="1" opacity="0.55"
               />
             );
@@ -144,16 +144,16 @@ export default function EcosystemMap({ nodes }: { nodes: EcosystemNode[] }) {
 
           {/* ── Target node ─────────────────────────────────── */}
           {(() => {
-            const [l1, l2] = splitName(targetName);
-            const hasTwo   = l2.length > 0;
-            const textY    = hasTwo ? TARGET.cy - 7 : TARGET.cy + 4;
+            // const [l1, l2] = splitName(targetName);
+            // const hasTwo   = l2.length > 0;
+            // const textY    = hasTwo ? TARGET.cy - 7 : TARGET.cy + 4;
             return (
               <g>
-                <circle cx={TARGET.cx} cy={TARGET.cy} r={tR}     fill="#0F0D08" />
+                {/* <circle cx={TARGET.cx} cy={TARGET.cy} r={tR}     fill="#0F0D08" />
                 <circle cx={TARGET.cx} cy={TARGET.cy} r={tR}     fill="none" stroke="#F59E0B" strokeWidth="2" />
-                <circle cx={TARGET.cx} cy={TARGET.cy} r={tR + 7} fill="none" stroke="#F59E0B" strokeWidth="0.5" opacity="0.25" />
-                <text x={TARGET.cx} y={textY}      textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="11" fontWeight="700" fill="#F59E0B">{l1}</text>
-                {hasTwo && <text x={TARGET.cx} y={textY + 14} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="11" fontWeight="700" fill="#F59E0B">{l2}</text>}
+                <circle cx={TARGET.cx} cy={TARGET.cy} r={tR + 7} fill="none" stroke="#F59E0B" strokeWidth="0.5" opacity="0.25" /> */}
+                {/* <text x={TARGET.cx} y={textY}      textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="11" fontWeight="700" fill="#F59E0B">{l1}</text> */}
+                {/* {hasTwo && <text x={TARGET.cx} y={textY + 14} textAnchor="middle" fontFamily="IBM Plex Mono, monospace" fontSize="11" fontWeight="700" fill="#F59E0B">{l2}</text>} */}
               </g>
             );
           })()}
