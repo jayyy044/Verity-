@@ -43,6 +43,8 @@ export default function BriefPanel({ data }: { data: IntelligenceReport }) {
         defensibility={data.defensibility}
       />
 
+      <NewsSection news={data.news} />
+
     
   </div>
   );

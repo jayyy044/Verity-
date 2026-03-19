@@ -1,0 +1,153 @@
+{
+  "identity": {
+    "name": "Nuvei",
+    "website": "nuvei.com",
+    "hq": "Montréal, Canada",
+    "founded": "2003",
+    "description": "Nuvei provides global payment technology infrastructure, enabling businesses to accept next-generation payments, offer payout options, and access card issuing, banking, risk, and fraud management services across 200+ markets.",
+    "business_model": "Transaction fees",
+    "sector": "FinTech",
+    "vertical": "Payment Processing",
+    "headcount": "~1,662",
+    "revenue_stage": "$50M+ ARR"
+  },
+  "funding": {
+    "total_raised": "$7.9B",
+    "last_round": {
+      "series": "Take Private",
+      "amount": "$6.3B",
+      "date": "April 2024"
+    },
+    "key_investors": [
+      "Advent International",
+      "Novacap",
+      "CDPQ",
+      "Philip Fayer"
+    ],
+    "ownership_type": "PE-backed (founder retained)"
+  },
+  "team": {
+    "ceo_name": "Philip Fayer",
+    "ceo_background": "Founder, Chairman and CEO of Nuvei since 2003, previously led the company through multiple growth phases including Goldman Sachs investment in mid-2000s and successful IPO in 2020. Winner of EY Entrepreneur of The Year® 2019 Award in Fintech.",
+    "founder_names": [
+      "Philip Fayer"
+    ]
+  },
+  "competitive": {
+    "market_position": "Global leader in payment processing with 200+ markets coverage",
+    "direct_competitors": [
+      {
+        "name": "Stripe",
+        "differentiator": "Developer-focused with simpler integration but less global coverage"
+      },
+      {
+        "name": "Adyen",
+        "differentiator": "European-based with strong enterprise focus but less North American presence"
+      },
+      {
+        "name": "Paystone",
+        "differentiator": "Canada-focused processor with simpler offerings for smaller merchants"
+      },
+      {
+        "name": "Moneris",
+        "differentiator": "Canada's largest bank-independent processor focused on domestic market"
+      },
+      {
+        "name": "Checkout.com",
+        "differentiator": "Performance-focused with lower fees but less comprehensive service suite"
+      }
+    ]
+  },
+  "market": {
+    "tailwinds": [
+      "Accelerating e-commerce growth post-COVID",
+      "Shift to digital and mobile payments",
+      "Growing demand for alternative payment methods globally"
+    ],
+    "headwinds": [
+      "Intense pricing competition in payments",
+      "Regulatory scrutiny and compliance costs",
+      "Economic uncertainty affecting merchant volumes"
+    ],
+    "tam_estimate": null
+  },
+  "news": {
+    "sentiment": "Positive",
+    "summary": "Nuvei continues aggressive expansion through strategic partnerships including FreedomPay for enterprise payments and WEX for B2B travel payments. Recent high-profile customer wins like SHEIN and MediaMarktSaturn demonstrate strong market traction, while platform integrations with BigCommerce and Nuweb expand distribution channels.",
+    "recent_events": [
+      {
+        "date": "January 2026",
+        "event": "Partnership with FreedomPay announced to unify enterprise payments globally across physical and digital channels"
+      },
+      {
+        "date": "January 2026",
+        "event": "WEX partnership launched to expand virtual card payments for global travel industry"
+      },
+      {
+        "date": "October 2024",
+        "event": "BigCommerce partnership announced for comprehensive omnichannel payment solutions across North America, Europe and APAC"
+      },
+      {
+        "date": "April 2024",
+        "event": "Advent International completed $6.3B take-private transaction at $34 per share"
+      }
+    ]
+  },
+  "defensibility": {
+    "moat_signals": [
+      "Processing over $200B in total volume annually",
+      "Support for 720+ alternative payment methods",
+      "Local acquiring in 50+ markets",
+      "Comprehensive platform covering payments, issuing, banking and risk management"
+    ],
+    "key_partnerships": [
+      "FreedomPay (enterprise commerce)",
+      "WEX (virtual cards)",
+      "BigCommerce (e-commerce platform)",
+      "SHEIN (global retail)",
+      "MediaMarktSaturn (electronics retail)"
+    ],
+    "leadership_changes": null
+  },
+  "ecosystem": {
+    "nodes": [
+      {
+        "name": "Stripe",
+        "type": "competitor",
+        "relationship": "Direct payment processing competitor with developer focus"
+      },
+      {
+        "name": "Adyen",
+        "type": "competitor",
+        "relationship": "Global payment processor competitor with European base"
+      },
+      {
+        "name": "Checkout.com",
+        "type": "competitor",
+        "relationship": "Performance-focused payment processor competitor"
+      },
+      {
+        "name": "FreedomPay",
+        "type": "ecosystem",
+        "relationship": "Enterprise commerce platform partner for unified payments"
+      },
+      {
+        "name": "WEX",
+        "type": "ecosystem",
+        "relationship": "Virtual card technology partner for B2B travel payments"
+      }
+    ]
+  },
+  "fit_score": {
+    "score": "Weak",
+    "sector_match": "FinTech",
+    "strategy_match": "None",
+    "geography": "Canada",
+    "rationale": "While Nuvei aligns perfectly with Sagard's FinTech focus and Canadian geography, the company was taken private by Advent International in April 2024 at a $6.3B enterprise value, making it unavailable for investment. The PE-backed status and massive scale put it outside Sagard's typical investment parameters.",
+    "portfolio_context": "No direct portfolio overlap identified."
+  },
+  "confidence": {
+    "score": "High",
+    "note": "Comprehensive data across all key areas with strong entity card anchoring, detailed funding timeline, and extensive recent news coverage, though actual revenue figure of $1.4B significantly exceeds $50M+ ARR category."
+  }
+}

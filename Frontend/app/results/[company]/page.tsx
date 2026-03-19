@@ -57,7 +57,7 @@ export default function ResultsPage() {
         companyName={report.identity.name}
         fitLevel={toFitLevel(report.fit_score?.score)}
       />
-      <div className="grid grid-cols-[68vw_32vw] flex-1 overflow-hidden">
+      <div className="grid grid-cols-[60vw_40vw] flex-1 overflow-hidden">
         <div className="border-r border-[var(--border)]">
           <EcosystemMap
             companyName={report.identity.name}

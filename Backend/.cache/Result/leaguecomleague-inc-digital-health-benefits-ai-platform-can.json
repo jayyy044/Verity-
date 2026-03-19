@@ -1,0 +1,144 @@
+{
+  "identity": {
+    "name": "League",
+    "website": "league.com",
+    "hq": "Toronto, Canada",
+    "founded": "2014",
+    "description": "League provides AI-powered healthcare consumer experience platforms to payers, providers, and healthcare organizations to improve health engagement and outcomes.",
+    "business_model": "B2B SaaS",
+    "sector": "Healthcare",
+    "vertical": "Digital Health CX Platform",
+    "headcount": "~404",
+    "revenue_stage": "$10–50M ARR"
+  },
+  "funding": {
+    "total_raised": "$285M",
+    "last_round": {
+      "series": "Venture Round",
+      "amount": "Undisclosed",
+      "date": "March 2025"
+    },
+    "key_investors": [
+      "TDM Growth Partners",
+      "Telus Ventures",
+      "Manulife",
+      "RBC Ventures"
+    ],
+    "ownership_type": "VC-backed"
+  },
+  "team": {
+    "ceo_name": "Michael Serbinis",
+    "ceo_background": "Serial entrepreneur who previously founded and sold Kobo to Rakuten for $315M USD and DocSpace in 2000. Co-founded League in 2014 with three friends.",
+    "founder_names": [
+      "Michael Serbinis"
+    ]
+  },
+  "competitive": {
+    "market_position": "Leading AI-first healthcare CX platform with 63M+ contracted users globally",
+    "direct_competitors": [
+      {
+        "name": "Nayya",
+        "differentiator": "Focuses on AI benefits guidance and decision automation for employees"
+      },
+      {
+        "name": "Elevate",
+        "differentiator": "Specializes in AI-powered benefits administration software for employers"
+      },
+      {
+        "name": "Heka",
+        "differentiator": "Emphasizes personalized employee benefits and wellness programs"
+      },
+      {
+        "name": "Euphoric",
+        "differentiator": "Positions as global benefits administration platform for multinational employers"
+      }
+    ]
+  },
+  "market": {
+    "tailwinds": [
+      "$100B digital healthcare transformation market",
+      "Growing demand for AI-driven healthcare personalization",
+      "Shift toward consumer-centric healthcare experiences"
+    ],
+    "headwinds": [
+      "Healthcare regulation complexity",
+      "Data privacy and security requirements",
+      "Competition from larger tech players entering healthcare"
+    ],
+    "tam_estimate": "$100B"
+  },
+  "news": {
+    "sentiment": "Positive",
+    "summary": "League demonstrates strong momentum with significant user growth milestones and continuous AI platform innovation. The company has achieved 63 million contracted users (271% YoY growth) while launching advanced AI capabilities including Agent Teams and Care Gap closure solutions. Recent partnerships with major healthcare brands and expansion into new markets signal strong market traction.",
+    "recent_events": [
+      {
+        "date": "March 2026",
+        "event": "Announced Spring '26 Release featuring orchestrated AI care navigation and Care Gap Agent Team at annual Connect conference"
+      },
+      {
+        "date": "March 2025",
+        "event": "Launched League AI with Agent Teams multi-agent system and announced partnership with Arcadia for longitudinal patient data integration"
+      },
+      {
+        "date": "January 2025",
+        "event": "Reached 40 million contracted users milestone (160% YoY growth) and secured $100M USD credit facility from RBCx"
+      },
+      {
+        "date": "October 2025",
+        "event": "Unveiled League Agent Teams at HLTH 2025, announcing partnership with Australia's Medibank and new AI-powered features"
+      }
+    ]
+  },
+  "defensibility": {
+    "moat_signals": [
+      "63M+ contracted user base creating network effects",
+      "Decade of healthcare consumer experience data",
+      "100M+ AI-driven recommendations generated annually",
+      "FHIR-native platform with enterprise compliance"
+    ],
+    "key_partnerships": [
+      "Manulife (strategic investor)",
+      "Medibank (Australia expansion)",
+      "CareSource (latest customer)",
+      "Arcadia (data integration)",
+      "AWS (cloud infrastructure)"
+    ],
+    "leadership_changes": null
+  },
+  "ecosystem": {
+    "nodes": [
+      {
+        "name": "Nayya",
+        "type": "competitor",
+        "relationship": "Direct competitor in AI-powered healthcare benefits navigation"
+      },
+      {
+        "name": "Elevate",
+        "type": "competitor",
+        "relationship": "Competitor in AI-powered benefits administration space"
+      },
+      {
+        "name": "Arcadia",
+        "type": "ecosystem",
+        "relationship": "Strategic data partnership for longitudinal patient records integration"
+      },
+      {
+        "name": "AWS",
+        "type": "ecosystem",
+        "relationship": "Cloud infrastructure and AI services partnership"
+      }
+    ]
+  },
+  "fit_score": {
+    "score": "Strong",
+    "sector_match": "Healthcare",
+    "strategy_match": "VC",
+    "geography": "Canada",
+    "rationale": "League represents a compelling fit with Sagard's healthcare thesis as a leading AI-first digital health platform with proven scale and enterprise traction. The company's B2B SaaS model serving major healthcare payers aligns well with Sagard's preference for scalable healthcare technology. With 63M+ users, $285M raised, and clear path to profitability by 2026, League demonstrates the growth-stage maturity suitable for VC investment.",
+    "portfolio_context": "No direct portfolio overlap identified."
+  },
+  "confidence": {
+    "score": "High",
+    "note": "Strong coverage across identity, funding, and competitive landscape with consistent data from multiple sources, though team information was limited to founder/CEO details only."
+  }
+}

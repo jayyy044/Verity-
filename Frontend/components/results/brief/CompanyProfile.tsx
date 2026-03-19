@@ -68,7 +68,7 @@ export default function CompanyProfile({ identity, funding, team }: CompanyProfi
             Headcount 
           </div>
           <div className="text-[12px] text-[var(--text)] font-mono">
-            {`~ ${identity.headcount || 'Not Found'} `}
+            {`${identity.headcount || 'Not Found'} `}
           </div>
         </div> 
       </div>

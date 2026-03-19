@@ -1,0 +1,121 @@
+{
+  "identity": {
+    "name": "Dyson",
+    "website": "lb.dyson.com",
+    "hq": "Singapore",
+    "founded": "1991",
+    "description": "Global technology company that designs and manufactures innovative home appliances including vacuum cleaners, air purifiers, hair care products, and hand dryers, selling premium-priced products directly to consumers and through retail channels.",
+    "business_model": "Premium appliance sales",
+    "sector": "Consumer",
+    "vertical": "Home Appliances",
+    "headcount": "10,000+",
+    "revenue_stage": "Profitable"
+  },
+  "funding": {
+    "total_raised": "Undisclosed",
+    "last_round": {
+      "series": "Undisclosed",
+      "amount": "Undisclosed",
+      "date": "Undisclosed"
+    },
+    "key_investors": [],
+    "ownership_type": "Privately held"
+  },
+  "team": {
+    "ceo_name": "Hanno Kirner",
+    "ceo_background": "Current CEO since February 2024, based in Singapore. Previously served in senior executive roles with 27+ years of total experience across industrial and technology companies.",
+    "founder_names": [
+      "James Dyson"
+    ]
+  },
+  "competitive": {
+    "market_position": "Global premium appliance leader",
+    "direct_competitors": [
+      {
+        "name": "Miele",
+        "differentiator": "German engineering focus with emphasis on traditional vacuum designs and durability"
+      },
+      {
+        "name": "Eureka",
+        "differentiator": "Mass market positioning with smart robot vacuum offerings at lower price points"
+      },
+      {
+        "name": "Tineco",
+        "differentiator": "Specializes in floor washers and carpet cleaning with professional-grade marketing"
+      },
+      {
+        "name": "Gtech",
+        "differentiator": "Next-generation cordless power focus with edge-cleaning technology"
+      }
+    ]
+  },
+  "market": {
+    "tailwinds": [
+      "Growing consumer preference for premium home appliances",
+      "Increasing health consciousness driving air purifier demand",
+      "Shift toward cordless and smart home cleaning solutions"
+    ],
+    "headwinds": [
+      "Economic pressures affecting discretionary spending on premium appliances",
+      "Intense competition from lower-priced alternatives",
+      "Supply chain challenges in global manufacturing"
+    ],
+    "tam_estimate": null
+  },
+  "news": {
+    "sentiment": "Positive",
+    "summary": "Dyson continues strong product innovation momentum with the March 2026 launch of the Clean+Wash Hygiene wet and dry cleaner, priced at $499. The company demonstrates ongoing R&D leadership with filter-free technology and hygienic cleaning solutions, maintaining its premium positioning in the competitive home appliance market.",
+    "recent_events": [
+      {
+        "date": "March 2026",
+        "event": "Launched Dyson Clean+Wash Hygiene wet and dry cleaner with filter-free technology at $499 price point"
+      }
+    ]
+  },
+  "defensibility": {
+    "moat_signals": [
+      "Proprietary cyclone technology and filter-free systems",
+      "Strong brand reputation for premium innovation",
+      "Extensive R&D capabilities with 1,000+ engineers globally",
+      "Direct-to-consumer sales model with retail partnerships"
+    ],
+    "key_partnerships": [],
+    "leadership_changes": "CEO Hanno Kirner appointed February 2024"
+  },
+  "ecosystem": {
+    "nodes": [
+      {
+        "name": "Miele",
+        "type": "competitor",
+        "relationship": "Direct competitor in premium vacuum cleaner market"
+      },
+      {
+        "name": "Eureka",
+        "type": "competitor",
+        "relationship": "Competitor in robot vacuum and cleaning appliance segments"
+      },
+      {
+        "name": "Tineco",
+        "type": "competitor",
+        "relationship": "Competitor in floor care and cleaning appliance market"
+      },
+      {
+        "name": "Gtech",
+        "type": "competitor",
+        "relationship": "Competitor in cordless vacuum cleaner segment"
+      }
+    ]
+  },
+  "fit_score": {
+    "score": "Weak",
+    "sector_match": "Consumer",
+    "strategy_match": "None",
+    "geography": "Global",
+    "rationale": "While Dyson is a profitable, well-established global technology company with strong innovation capabilities, it operates outside Sagard's core focus sectors of FinTech, Healthcare, and Technology. As a mature, privately-held consumer appliance company with 10,000+ employees, it doesn't align with Sagard's typical investment strategies or stage preferences.",
+    "portfolio_context": "Competitor overlap identified with Sagard portfolio company Formance through Miele vacuum cleaner competitor relationship, suggesting some peripheral market awareness but no direct portfolio synergies."
+  },
+  "confidence": {
+    "score": "Medium",
+    "note": "Strong company identity and leadership data confirmed, but critical funding history and investor information completely absent from research results."
+  }
+}

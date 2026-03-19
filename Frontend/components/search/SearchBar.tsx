@@ -85,9 +85,9 @@ export default function SearchBar() {
           </div>
           <button
             type="submit"
-            className="w-[100px] mx-auto mt-[20px] mb-[15px] bg-[var(--gold)] border-none text-black font-mono text-[11px] font-medium px-6 py-[10px] tracking-[0.08em] cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity"
+            className="w-[100px] mx-auto mt-[20px] mb-[15px] bg-[var(--gold)] border-none text-black font-mono text-[11px] font-bold px-6 py-[10px] tracking-[0.08em] cursor-pointer whitespace-nowrap hover:opacity-90 transition-opacity"
           >
-            MAP IT &rarr;
+            MAP IT 
           </button>
         </div>
       </form>
