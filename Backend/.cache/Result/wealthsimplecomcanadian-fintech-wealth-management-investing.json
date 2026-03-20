@@ -4,8 +4,8 @@
     "website": "wealthsimple.com",
     "hq": "Toronto, Canada",
     "founded": "2014",
-    "description": "Financial services platform offering managed investing, commission-free trading, high-interest chequing and savings, and tax filing services to help Canadians build long-term wealth.",
-    "business_model": "B2C FinTech Platform",
+    "description": "Wealthsimple offers smart investing products, commission-free trading, and high-interest banking services to help Canadians build long-term wealth.",
+    "business_model": "B2C FinTech",
     "sector": "FinTech",
     "vertical": "Digital Wealth Management",
     "headcount": "1,578",
@@ -24,11 +24,11 @@
       "CPP Investments",
       "Power Corporation of Canada"
     ],
-    "ownership_type": "VC-backed (Power Corporation majority)"
+    "ownership_type": "VC-backed (Power Corp majority)"
   },
   "team": {
     "ceo_name": "Michael Katchen",
-    "ceo_background": "Co-founder and CEO of Wealthsimple since 2014, focused on making smart investing simple, transparent, and low-cost for everyone.",
+    "ceo_background": "Co-founder and CEO since 2014, previously worked in financial services and technology entrepreneurship with a focus on making investing accessible to everyone.",
     "founder_names": [
       "Michael Katchen",
       "Brett Huneycutt",
@@ -40,50 +40,50 @@
     "direct_competitors": [
       {
         "name": "Questrade",
-        "differentiator": "Traditional self-directed trading platform with commission focus"
-      },
-      {
-        "name": "RBC InvestEase",
-        "differentiator": "Bank-backed robo-adviser with traditional banking integration"
-      },
-      {
-        "name": "Betterment",
-        "differentiator": "US-focused automated investing with tax optimization features"
+        "differentiator": "Traditional discount brokerage with focus on DIY trading tools"
       },
       {
         "name": "M1 Finance",
-        "differentiator": "US platform with pie chart portfolio visualization approach"
+        "differentiator": "US-based automated investing platform with portfolio pie charts"
+      },
+      {
+        "name": "RBC InvestEase",
+        "differentiator": "Big bank robo-adviser offering institutional backing"
+      },
+      {
+        "name": "Betterment",
+        "differentiator": "US pioneer in robo-advising with tax-loss harvesting focus"
       }
     ]
   },
   "market": {
     "tailwinds": [
       "Growing demand for low-cost digital financial services",
-      "Increasing adoption of robo-advisers among millennials",
-      "Cross-border payment modernization in Canada"
+      "Increasing financial literacy among millennials",
+      "Regulatory push for open banking in Canada"
     ],
     "headwinds": [
-      "Intense competition from traditional banks",
-      "Regulatory complexity in financial services",
-      "Economic uncertainty affecting investment flows"
+      "Intensifying competition from big banks' digital offerings",
+      "Rising interest rates affecting growth stock valuations",
+      "Regulatory uncertainty around fintech licensing"
     ],
     "tam_estimate": null
   },
   "news": {
     "sentiment": "Positive",
-    "summary": "Wealthsimple is executing on aggressive expansion with strategic partnerships and infrastructure investments positioning it as Canada's leading digital bank alternative. Recent SWIFT network membership and Wise payment integration demonstrate serious fintech infrastructure ambitions, while the $10B valuation milestone reflects strong investor confidence in the company's trajectory toward becoming a comprehensive financial platform.",
+    "summary": "Wealthsimple is demonstrating strong execution momentum with strategic partnerships expanding its service capabilities and significant infrastructure investments. The company's recent SWIFT membership achievement and Wise partnership signal ambitious expansion into payments infrastructure, while crossing $100B AUA three years ahead of schedule validates its growth trajectory.",
     "recent_events": [
       {
         "date": "March 2026",
-        "event": "Became first Canadian fintech to join SWIFT network for enhanced international payments"
+        "event": "Became first Canadian fintech to join SWIFT network, enabling direct international transfers"
       },
       {
         "date": "January 2026",
-        "event": "Launched Canada Post partnership for physical cash deposits at 5,500+ locations"
+        "event": "Launched cash deposit service through 5,500+ Canada Post locations nationwide"
       },
       {
         "date": "November 2025",
-        "event": "Partnered with Wise Platform to offer integrated international transfers to 30 countries"
+        "event": "Partnered with Wise to offer international payments to 30 countries in 10+ currencies"
       },
       {
         "date": "October 2025",
@@ -93,15 +93,16 @@
   },
   "defensibility": {
     "moat_signals": [
-      "$100B+ assets under administration scale",
-      "3M+ customer base in Canada",
-      "First mover advantage in Canadian digital wealth management",
-      "Regulatory moats as licensed securities dealer"
+      "Over $100B in assets under administration",
+      "3 million customer base with strong retention",
+      "First mover advantage in Canadian robo-advising",
+      "Integrated financial platform across investing, banking, and payments"
     ],
     "key_partnerships": [
-      "Wise (international payments)",
+      "Wise (payments infrastructure)",
       "Canada Post (cash deposits)",
-      "SWIFT (global payments network)"
+      "SWIFT (international transfers)",
+      "Bank of Canada (Real-Time Rail early adopter)"
     ],
     "leadership_changes": null
   },
@@ -110,22 +111,22 @@
       {
         "name": "Questrade",
         "type": "competitor",
-        "relationship": "Direct competitor in Canadian online trading"
+        "relationship": "Direct competitor in Canadian discount brokerage"
       },
       {
-        "name": "RBC InvestEase",
+        "name": "M1 Finance",
         "type": "competitor",
-        "relationship": "Bank-backed robo-adviser competitor"
+        "relationship": "US-based automated investing competitor"
       },
       {
         "name": "Betterment",
         "type": "competitor",
-        "relationship": "US automated investing competitor"
+        "relationship": "US robo-adviser competitor"
       },
       {
         "name": "Wise",
         "type": "ecosystem",
-        "relationship": "Strategic partner for international payments infrastructure"
+        "relationship": "Payment infrastructure partner for international transfers"
       }
     ]
   },
@@ -134,11 +135,11 @@
     "sector_match": "FinTech",
     "strategy_match": "None",
     "geography": "Canada",
-    "rationale": "While Wealthsimple operates in Sagard's core FinTech sector and Canadian geography, the company's C$10B valuation far exceeds traditional PE parameters and it's already profitable at scale. The recent C$750M Series E positions it as a late-stage VC play beyond typical investment thresholds.",
-    "portfolio_context": "Wealthsimple is already a current Sagard portfolio company, making any new investment consideration moot."
+    "rationale": "While Wealthsimple operates in Sagard's core FinTech sector and Canadian geography, it is already a current portfolio company, eliminating investment opportunity. The company's $10B valuation and profitable status would typically align with growth equity strategies, but existing ownership precludes new investment consideration.",
+    "portfolio_context": "Wealthsimple is already a current Sagard portfolio company, eliminating any potential investment opportunity and requiring strategy_match to be set to None."
   },
   "confidence": {
     "score": "High",
-    "note": "Comprehensive data coverage across all key areas with multiple recent sources confirming valuation, team, and strategic initiatives; actual revenue of C$297M confirms $50M+ ARR classification."
+    "note": "Strong data quality across all key metrics with recent funding details, clear competitive positioning, and comprehensive news coverage, though actual revenue figure of $297M noted from entity card."
   }
 }

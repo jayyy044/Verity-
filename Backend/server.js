@@ -112,10 +112,26 @@ app.post('/research', async (req, res) => {
 
     // ── TIER 1: Result cache ──────────────────────────────────
     // Full report exists — stream all steps instantly and return
+    const delay = ms => new Promise(res => setTimeout(res, ms));
     const cachedResult = readCache(RESULT_DIR, site, descriptor);
     if (cachedResult) {
-      console.log(`[Research] Result cache hit — returning immediately for: ${site}`);
-      for (let s = 1; s <= 7; s++) send(res, { step: s });
+      console.log(`[Research] Result cache hit — simulating progress for: ${site}`);
+    
+      const TOTAL_DELAY = 10000; // 10s total
+      const STEP_DELAY  = 1000;  // 1s per step
+    
+      const steps = 7;
+    
+      for (let s = 1; s <= steps; s++) {
+        send(res, { step: s });
+        await delay(STEP_DELAY);
+      }
+    
+      const remaining = TOTAL_DELAY - (steps * STEP_DELAY);
+      if (remaining > 0) {
+        await delay(remaining);
+      }
+    
       send(res, { step: 'done', data: cachedResult });
       res.end();
       return;

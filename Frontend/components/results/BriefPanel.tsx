@@ -45,6 +45,8 @@ export default function BriefPanel({ data }: { data: IntelligenceReport }) {
 
       <NewsSection news={data.news} />
 
+      <ConfidenceFooter data={data.confidence}/>
+
     
   </div>
   );

@@ -12,7 +12,7 @@
     "revenue_stage": "$50M+ ARR"
   },
   "funding": {
-    "total_raised": "$286.1M",
+    "total_raised": "$286M",
     "last_round": {
       "series": "Series C",
       "amount": "$90M",
@@ -28,84 +28,83 @@
   },
   "team": {
     "ceo_name": "Siva Namasivayam",
-    "ceo_background": "Co-founder and CEO since 2019, previously founding partner of SCIO Health Analytics serving Fortune 500 healthcare organizations. Holds MS in Computer Science from University of Pittsburgh and MBA from University of Michigan.",
+    "ceo_background": "Third-time healthcare entrepreneur with over 20 years of experience utilizing technology and data to improve healthcare processes. Previously co-founded SCIO Health Analytics serving 50+ Fortune 500 healthcare organizations. Holds MS in Computer Science from University of Pittsburgh and MBA from University of Michigan.",
     "founder_names": [
       "Siva Namasivayam"
     ]
   },
   "competitive": {
-    "market_position": "Market leader in AI-powered prior authorization",
+    "market_position": "Market leader in AI-powered prior authorization with 93% provider satisfaction rating",
     "direct_competitors": [
       {
         "name": "Anterior",
-        "differentiator": "Focuses on expediting health insurance approvals with AI at $95M valuation"
+        "differentiator": "Raises $20M Series A, smaller scale than Cohere's enterprise focus"
       },
       {
         "name": "Adjudicator",
-        "differentiator": "AI-powered system for analyzing medical policies and optimizing PA letters"
+        "differentiator": "Focuses on optimizing PA letters for approval probability rather than full workflow automation"
       },
       {
         "name": "Humata Health",
-        "differentiator": "Comprehensive prior authorization solution for both providers and payers"
+        "differentiator": "Targets both providers and payers with comprehensive PA solution"
       },
       {
         "name": "Banjo Health",
-        "differentiator": "Clinician-designed end-to-end platform for medical and pharmacy PA management"
+        "differentiator": "Clinician-designed platform emphasizing end-to-end medical and pharmacy PA management"
       },
       {
-        "name": "EthermedAI",
-        "differentiator": "Intelligent automation focused on minimizing manual processes without additional apps"
+        "name": "Ethermed",
+        "differentiator": "No additional apps required approach, integrates directly into existing workflows"
       }
     ]
   },
   "market": {
     "tailwinds": [
-      "Growing demand for healthcare AI automation",
-      "Regulatory push for faster prior authorization",
-      "Rising administrative costs driving efficiency needs"
+      "CMS regulatory requirements driving PA automation adoption",
+      "Growing demand for AI-powered healthcare administration",
+      "Health plans seeking to reduce administrative costs and improve provider satisfaction"
     ],
     "headwinds": [
-      "AI reliability scrutiny in healthcare",
-      "Provider resistance to new technology",
-      "Complex regulatory compliance requirements"
+      "AI regulatory scrutiny in healthcare",
+      "Provider resistance to automation in clinical decision-making",
+      "Complex healthcare interoperability challenges"
     ],
     "tam_estimate": null
   },
   "news": {
     "sentiment": "Positive",
-    "summary": "Strong momentum with record 2025 growth following $90M Series C funding led by Temasek. Company achieved 94% provider satisfaction, expanded client base with ten new deals including CMS contracts, and gained recognition from major industry analysts including Gartner and KLAS. Leadership recognition with CEO named EY Entrepreneur of the Year reflects successful execution of clinical intelligence strategy.",
+    "summary": "Cohere Health demonstrates strong momentum with record 2025 growth following their $90M Series C raise. The company has achieved significant scale milestones including processing 12M+ prior authorization requests annually, serving 600K+ providers, and maintaining 93-94% provider satisfaction ratings. Recognition from major industry analysts (Gartner, KLAS) and awards (EY Entrepreneur of the Year, TIME's Top HealthTech) reinforces their market leadership position in clinical intelligence.",
     "recent_events": [
       {
         "date": "May 2025",
-        "event": "$90M Series C funding led by Temasek to scale AI platform and expand clinical use cases"
+        "event": "Raised $90M Series C led by Temasek, bringing total funding to $200M"
       },
       {
         "date": "July 2025",
         "event": "CEO Siva Namasivayam named EY Entrepreneur of the Year 2025 New England Award winner"
       },
       {
-        "date": "October 2025",
-        "event": "Partnership with Microsoft Dragon Copilot for ambient listening prior authorization"
+        "date": "January 2026",
+        "event": "Announced record 2025 growth with 10 new health plan deals and expanded platform adoption"
       },
       {
-        "date": "January 2026",
-        "event": "Announced record 2025 growth with ten new deals and 94% provider satisfaction"
+        "date": "2025",
+        "event": "Recently acquired Zigna AI to enhance clinical intelligence capabilities"
       }
     ]
   },
   "defensibility": {
     "moat_signals": [
-      "93-94% provider satisfaction rating",
-      "Processing 12M+ prior authorization requests annually",
-      "85% real-time authorization approvals",
-      "Clinical-grade AI with responsible AI-first approach"
+      "Processing 12M+ annual PA requests creates significant data advantage",
+      "93-94% provider satisfaction creates switching costs",
+      "Native EHR integrations with Epic and other major systems",
+      "HITRUST certification and regulatory compliance"
     ],
     "key_partnerships": [
-      "MCG Health (clinical criteria)",
-      "Microsoft (ambient listening)",
-      "Epic (Payer Platform integration)",
-      "Medical Mutual",
-      "Humana"
+      "Epic (EHR integration)",
+      "Availity (portal integration)",
+      "NaviNet (portal integration)",
+      "CMS (regulatory compliance support)"
     ],
     "leadership_changes": null
   },
@@ -114,45 +113,35 @@
       {
         "name": "Anterior",
         "type": "competitor",
-        "relationship": "Direct competitor in AI-powered prior authorization with $95M valuation"
-      },
-      {
-        "name": "Adjudicator",
-        "type": "competitor",
-        "relationship": "Competes in AI-powered prior authorization platform space"
-      },
-      {
-        "name": "Banjo Health",
-        "type": "competitor",
-        "relationship": "Competing clinician-designed prior authorization management solution"
-      },
-      {
-        "name": "MCG Health",
-        "type": "ecosystem",
-        "relationship": "Strategic partner providing clinical criteria integration"
-      },
-      {
-        "name": "Microsoft",
-        "type": "ecosystem",
-        "relationship": "Technology partner for ambient listening capabilities"
+        "relationship": "Direct competitor in AI-powered prior authorization"
       },
       {
         "name": "Epic",
         "type": "ecosystem",
-        "relationship": "EHR integration partner through Payer Platform"
+        "relationship": "Strategic EHR integration partner"
+      },
+      {
+        "name": "Temasek",
+        "type": "ecosystem",
+        "relationship": "Lead Series C investor"
+      },
+      {
+        "name": "CMS",
+        "type": "ecosystem",
+        "relationship": "Regulatory compliance partner for federal requirements"
       }
     ]
   },
   "fit_score": {
     "score": "Strong",
     "sector_match": "Healthcare",
-    "strategy_match": "PE",
+    "strategy_match": "VC",
     "geography": "North America",
-    "rationale": "Exceptional fit with strong Healthcare sector alignment, profitable scale at $184M revenue, and demonstrated market leadership in clinical intelligence. Company shows clear PE characteristics with mature revenue base, proven business model, and defensive market position processing 12M+ annual requests. Recent $90M Series C suggests approaching later-stage valuations but still within addressable range for the right strategic buyer.",
+    "rationale": "Excellent fit for Sagard's healthcare focus with clear VC-stage characteristics despite $184M revenue. Company remains VC-backed with recent $90M Series C, indicating continued high-growth trajectory rather than PE buyout scenario. Strong market position in AI-powered healthcare administration aligns with technology thesis, and Boston headquarters fits North American geography preference.",
     "portfolio_context": "No direct portfolio overlap identified."
   },
   "confidence": {
     "score": "High",
-    "note": "Strong financial data from entity card and comprehensive recent funding coverage, though limited team leadership details beyond CEO profile."
+    "note": "Strong data quality across identity, funding, and market position with recent Series C providing fresh financial metrics, though limited team depth beyond CEO profile."
   }
 }
