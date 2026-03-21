@@ -12,11 +12,13 @@
 
 ---
 
-## Overview
+## Overview and Project Context 
+
+Built as a take-home assignment for the Sagard AI Enablement Internship, March 2026. The brief required a system that takes on real cognitive work, connects to at least two external tools, and preserves a meaningful human decision point. Verity meets all three requirements and is built entirely on Claude and Exa — two of Sagard's preferred tools for the assignment.
 
 Verity is a deal screening tool built for the investment team at Sagard, a multi-strategy alternative asset manager ($33B+ AUM) focused on FinTech, Healthcare, and Technology. An analyst inputs any private company name and receives a fully structured intelligence brief alongside an interactive ecosystem map, drawing from six parallel live web searches synthesized by Claude.
 
-The core problem it solves: Sagard reviews roughly 80 companies for every one investment made. The first 30 to 45 minutes on any new opportunity is an analyst manually assembling a picture from Google, LinkedIn, press databases, and internal records with no consistency and no guarantee of completeness. Verity collapses that into under 60 seconds.
+The core problem it solves: Whenever an analyst wants to review a new potential investment they need to spend hours organizing data about the new company. They need to scoure web and then piece together bits and pieces of information from Google, LinkedIn, press databases, and internal records with no consistency and no guarantee of completeness. Verity collapses that into under 60 seconds.
 
 ---
 
@@ -75,6 +77,3 @@ cd ../frontend && npm run dev
 
 ---
 
-## Project Context
-
-Built as a take-home assignment for the Sagard AI Enablement Internship, March 2026. The brief required a system that takes on real cognitive work, connects to at least two external tools, and preserves a meaningful human decision point. Verity meets all three requirements and is built entirely on Claude and Exa — two of Sagard's preferred tools for the assignment.
