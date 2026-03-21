@@ -18,7 +18,7 @@ Built as a take-home assignment for the Sagard AI Enablement Internship, March 2
 
 Verity is a deal screening tool built for the investment team at Sagard, a multi-strategy alternative asset manager ($33B+ AUM) focused on FinTech, Healthcare, and Technology. An analyst inputs any private company name and receives a fully structured intelligence brief alongside an interactive ecosystem map, drawing from six parallel live web searches synthesized by Claude.
 
-The core problem it solves: Whenever an analyst wants to review a new potential investment they need to spend hours organizing data about the new company. They need to scoure web and then piece together bits and pieces of information from Google, LinkedIn, press databases, and internal records with no consistency and no guarantee of completeness. Verity collapses that into under 60 seconds.
+The core problem it solves: Whenever an analyst wants to review a new potential investment they need to spend hours organizing data about the new company. They need to scour web and then piece together bits and pieces of information from Google, LinkedIn, press databases, and internal records with no consistency and no guarantee of completeness. Verity collapses that into under 60 seconds.
 
 ---
 
